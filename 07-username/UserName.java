@@ -18,10 +18,10 @@ public class UserName {
     
     // test output
     if(school.equals("student")){
-      System.out.println("Your username will be: " + (firstName) + initialize(lastName) + (favnum) + ".");
+      System.out.println("Your username will be: " + (firstName) + initialize(lastName) + (favnum) + "@nycstudents.net");
     }
     else if(school.equals("teacher")){
-      System.out.println("Your username will be: " + initialize(firstName) + (lastName) + (favnum) + ".");        
+      System.out.println("Your username will be: " + initialize(firstName) + (lastName) + (favnum) + "@schools.nyc");        
     }
     else{
       System.out.println("PLease select from the two options");
@@ -38,5 +38,24 @@ public class UserName {
   public static String initialize(String n){
     return n.substring(0, 1);
   } // end initialize method
+  public static String generatePassword(int length) {
+     String password = "yes";
+     //loop 'length' times
+     
+     
+     // generate random #
+     // from 65-90 CAPITAL letters
+    
+     int rand = (char)(int)(Math.random() * (65 - 90 + 1) + 65);
+     char c = (char)rand;
 
-} // end class
+        // from 97 - 122 lowercase
+        // from 33 - 47 for special characters
+        
+        // convert the random int to char, ex: c =(char)i;
+        
+        // add the char to password
+        
+     return password;
+  } // end class
+}
