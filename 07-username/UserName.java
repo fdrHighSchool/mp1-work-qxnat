@@ -21,41 +21,34 @@ public class UserName {
       System.out.println("Your username will be: " + (firstName) + initialize(lastName) + (favnum) + "@nycstudents.net");
     }
     else if(school.equals("teacher")){
-      System.out.println("Your username will be: " + initialize(firstName) + (lastName) + (favnum) + "@schools.nyc");        
+      System.out.println("Your username will be: " + initialize(firstName) + (lastName) + (favnum) + "@schools.nyc.gov");        
     }
     else{
       System.out.println("PLease select from the two options");
     }
+    generatePassword(8);
     s.close();
    // end main method
   } 
-   /*      
-    * Name: initialize       
-    * Purpose: send back the first character (inital) of a name      
-    * Input: a name (String)      
-    * Return: a single character (String)      
-    */  
   public static String initialize(String n){
     return n.substring(0, 1);
-  } // end initialize method
+  } // end initialize method 
   public static String generatePassword(int length) {
-     String password = "yes";
-     //loop 'length' times
-     
-     
-     // generate random #
-     // from 65-90 CAPITAL letters
-    
-     int rand = (char)(int)(Math.random() * (65 - 90 + 1) + 65);
-     char c = (char)rand;
-
-        // from 97 - 122 lowercase
-        // from 33 - 47 for special characters
-        
-        // convert the random int to char, ex: c =(char)i;
-        
-        // add the char to password
-        
+     String password = "";
+     //loop 'length' times 
+     for(int i=0; i < length; i++){
+      int randcap = (int)(Math.random() * (90 - 65 + 1) + 65);
+      char cc = (char)randcap;
+      password += cc;
+      int randlow = (int)(Math.random() * (122 - 97 + 1) + 97);
+      char cl = (char)randlow;
+      password += cl;
+      int randspec = (int)(Math.random() * (47 - 33 + 1) + 33);
+      char cs = (char)(randspec);
+      password += cs;
+     }
+     System.out.println("Your password will be: " + password);
      return password;
   } // end class
-}
+  
+}// end of code
